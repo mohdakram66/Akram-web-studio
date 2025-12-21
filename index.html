@@ -24,17 +24,22 @@
         margin: auto;
         padding: 20px;
     }
-    /* Portfolio Section */
-    .portfolio {
+    .section {
         margin-top: 40px;
         text-align: center;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
-    .portfolio h2 {
+    .section h2 {
         color: #2c3e50;
         margin-bottom: 20px;
-        font-size: 2em;
     }
-    /* Pricing Section */
+    .section p {
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
     .pricing-section {
         background: #fff;
         padding: 50px 20px;
@@ -91,56 +96,26 @@
         margin-top: 10px;
         text-align: center;
     }
-    /* About Section */
-    .about {
-        margin-top: 50px;
+    .whatsapp-btn {
+        display: block;
+        background: #25D366;
+        color: white;
         text-align: center;
-        padding: 20px;
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-    /* Contact Section */
-    .contact {
-        margin-top: 50px;
-        text-align: center;
-        padding: 20px;
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-    .contact h2 {
-        color: #2c3e50;
-    }
-    .contact ul {
-        list-style: none;
-        padding: 0;
-    }
-    .contact ul li {
-        padding: 8px 0;
-        font-size: 1.1em;
-    }
-    .contact ul li a {
-        color: #e74c3c;
+        padding: 10px;
+        margin-top: 15px;
+        border-radius: 5px;
         text-decoration: none;
+        font-weight: bold;
     }
-    .contact ul li a:hover {
-        text-decoration: underline;
+    .whatsapp-btn:hover {
+        background: #128C7E;
     }
-    /* Footer */
     footer {
         background: #2c3e50;
         color: #fff;
         text-align: center;
         padding: 20px 0;
         margin-top: 50px;
-    }
-    footer a {
-        color: #fff;
-        text-decoration: none;
-    }
-    footer a:hover {
-        text-decoration: underline;
     }
 </style>
 </head>
@@ -153,10 +128,10 @@
 
 <div class="container">
 
-<!-- Portfolio Section -->
-<div class="portfolio">
-    <h2>My Portfolio</h2>
-    <p>Showcasing Modern and Responsive Web Designs</p>
+<!-- Why Choose Me Section -->
+<div class="section">
+    <h2>Why Choose Me?</h2>
+    <p>With over 2 years of experience, I craft websites that are not just visually stunning but also optimized for performance. My goal is to make your online presence look professional and attract more buyers!</p>
 </div>
 
 <!-- Pricing Section -->
@@ -171,7 +146,7 @@
                 <li>Standard Design</li>
                 <li>Responsive Layout</li>
             </ul>
-            <div class="note">Delivery Time: 2-5 Days</div>
+            <a href="https://wa.me/916006587500?text=Hi Akram, I am interested in your Basic Web Design Package (₹1499, 1 Page)." class="whatsapp-btn">WhatsApp Order</a>
         </div>
         <div class="plan">
             <h3>Standard</h3>
@@ -181,7 +156,7 @@
                 <li>Professional Design</li>
                 <li>Responsive Layout</li>
             </ul>
-            <div class="note">Delivery Time: 5-8 Days</div>
+            <a href="https://wa.me/916006587500?text=Hi Akram, I am interested in your Standard Web Design Package (₹2999, 3 Pages)." class="whatsapp-btn">WhatsApp Order</a>
         </div>
         <div class="plan">
             <h3>Premium</h3>
@@ -192,6 +167,7 @@
                 <li>Responsive Layout</li>
             </ul>
             <div class="note">Delivery Time: 15 Days</div>
+            <a href="https://wa.me/916006587500?text=Hi Akram, I am interested in your Premium Web Design Package (₹4999, 6 Pages, Delivery: 15 Days)." class="whatsapp-btn">WhatsApp Order</a>
         </div>
         <div class="plan">
             <h3>Advance</h3>
@@ -202,38 +178,31 @@
                 <li>Responsive Layout</li>
             </ul>
             <div class="note">Delivery Time: 30 Days</div>
+            <a href="https://wa.me/916006587500?text=Hi Akram, I am interested in your Advance Web Design Package (₹7999, 10+2 Pages, Delivery: 30 Days)." class="whatsapp-btn">WhatsApp Order</a>
         </div>
     </div>
 </div>
 
-<!-- About Section -->
-<div class="about">
-    <h2>Why Choose Me?</h2>
-    <p>With over 2 years of experience, I craft websites that are not just visually stunning but also optimized for performance. My goal is to make your online presence look professional and attract more buyers!</p>
-</div>
-
-<!-- Contact Section -->
-<div class="contact">
+<!-- Contact Me Section -->
+<div class="section">
     <h2>Contact Me</h2>
-    <ul>
-        <li>Phone: <a href="tel:6006587500">6006587500</a></li>
-        <li>Email: <a href="mailto:akram.webstudio@gmail.com">akram.webstudio@gmail.com</a></li>
-        <li>Instagram: <a href="https://instagram.com/akram_web_designer" target="_blank">@akram_web_designer</a></li>
-    </ul>
+    <p>If you are interested or have any questions, feel free to contact me. I'm here to help you create a stunning web presence!</p>
+    <p>Phone: <a href="tel:6006587500">6006587500</a></p>
+    <p>Email: <a href="mailto:akram.webstudio@gmail.com">akram.webstudio@gmail.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/akram_web_designer" target="_blank">@akram_web_designer</a></p>
+    <a href="https://wa.me/916006587500?text=Hi Akram, I want to discuss my web design requirements." class="whatsapp-btn">WhatsApp Me</a>
 </div>
 
 </div>
 
-<!-- Footer with Copyright -->
 <footer>
     <p id="copyright"></p>
 </footer>
 
 <script>
-    // Dynamic Year in copyright
     const year = new Date().getFullYear();
     document.getElementById("copyright").innerHTML = `&copy; ${year} Akram Web Designer. All rights reserved.`;
 </script>
 
 </body>
-</html>
+            </html>
