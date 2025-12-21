@@ -13,10 +13,11 @@
         color: #333;
     }
     header {
-        background: #2c3e50;
+        background: #1a1a1a;
         color: #fff;
-        padding: 20px 0;
+        padding: 30px 0;
         text-align: center;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     .container {
         width: 90%;
@@ -25,61 +26,71 @@
         padding: 20px;
     }
     .section {
-        margin-top: 40px;
+        margin-top: 50px;
         text-align: center;
-        padding: 20px;
+        padding: 30px;
         background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    .section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
     .section h2 {
-        color: #2c3e50;
+        color: #1a1a1a;
         margin-bottom: 20px;
+        font-size: 2.2em;
+        font-weight: 600;
     }
     .section p {
         font-size: 1.1em;
         line-height: 1.6;
+        color: #555;
     }
     .pricing-section {
         background: #fff;
-        padding: 50px 20px;
+        padding: 60px 20px;
         margin-top: 50px;
-        border-radius: 10px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     }
     .pricing-section h2 {
         text-align: center;
-        color: #2c3e50;
-        margin-bottom: 30px;
-        font-size: 2em;
+        color: #1a1a1a;
+        margin-bottom: 40px;
+        font-size: 2.4em;
+        font-weight: 600;
     }
     .pricing-table {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px;
+        gap: 25px;
     }
     .plan {
         background: #f9f9f9;
         border: 1px solid #ddd;
-        border-radius: 8px;
-        width: 250px;
-        padding: 20px;
+        border-radius: 10px;
+        width: 270px;
+        padding: 25px;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     }
     .plan:hover {
         transform: translateY(-10px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.2);
     }
     .plan h3 {
         margin-top: 0;
-        color: #2c3e50;
+        color: #1a1a1a;
+        font-size: 1.4em;
     }
     .price {
-        font-size: 2em;
+        font-size: 2.2em;
         color: #e74c3c;
-        margin: 10px 0;
+        margin: 15px 0;
         font-weight: bold;
     }
     ul {
@@ -87,35 +98,50 @@
         padding: 0;
     }
     ul li {
-        padding: 10px 0;
+        padding: 12px 0;
         border-bottom: 1px dashed #ccc;
+        font-size: 1em;
     }
     .note {
-        font-size: 0.8em;
+        font-size: 0.9em;
         color: #555;
         margin-top: 10px;
         text-align: center;
     }
-    .whatsapp-btn {
+    .payment-btn {
         display: block;
         background: #25D366;
         color: white;
         text-align: center;
-        padding: 10px;
+        padding: 12px;
         margin-top: 15px;
-        border-radius: 5px;
+        border-radius: 6px;
         text-decoration: none;
         font-weight: bold;
+        font-size: 1.1em;
     }
-    .whatsapp-btn:hover {
+    .payment-btn:hover {
         background: #128C7E;
     }
-    footer {
-        background: #2c3e50;
+    .info {
+        font-size: 0.9em;
+        color: #555;
+        margin-top: 10px;
+    }
+    .footer {
+        background: #1a1a1a;
         color: #fff;
         text-align: center;
-        padding: 20px 0;
+        padding: 30px 0;
         margin-top: 50px;
+        border-top: 1px solid #444;
+    }
+    .footer a {
+        color: #fff;
+        text-decoration: none;
+    }
+    .footer a:hover {
+        text-decoration: underline;
     }
 </style>
 </head>
@@ -139,24 +165,28 @@
     <h2>Our Packages & Pricing</h2>
     <div class="pricing-table">
         <div class="plan">
-            <h3>Basic</h3>
+            <h3>Basic (1 Page)</h3>
             <div class="price">₹1499</div>
             <ul>
                 <li>1 Page</li>
                 <li>Standard Design</li>
                 <li>Responsive Layout</li>
+                <li>Delivery: 2-5 Working Days</li>
             </ul>
-            <a href="https://wa.me/916006587500?text=Hi Akram, I am interested in your Basic Web Design Package (₹1499, 1 Page)." class="whatsapp-btn">WhatsApp Order</a>
+            <a href="https://wa.me/916006587500?text=Hi Akram, I am interested in your Basic Web Design Package (₹1499, 1 Page)." class="payment-btn">Pay ₹49 First</a>
+            <p class="info">After payment, WhatsApp order will be enabled. Screenshot of payment is required.</p>
         </div>
         <div class="plan">
-            <h3>Standard</h3>
+            <h3>Standard (3 Pages)</h3>
             <div class="price">₹2999</div>
             <ul>
                 <li>3 Pages</li>
                 <li>Professional Design</li>
                 <li>Responsive Layout</li>
+                <li>Delivery: 6-10 Working Days</li>
             </ul>
-            <a href="https://wa.me/916006587500?text=Hi Akram, I am interested in your Standard Web Design Package (₹2999, 3 Pages)." class="whatsapp-btn">WhatsApp Order</a>
+            <a href="https://wa.me/916006587500?text=Hi Akram, I am interested in your Standard Web Design Package (₹2999, 3 Pages)." class="payment-btn">Pay ₹49 First</a>
+            <p class="info">After payment, WhatsApp order will be enabled. Screenshot of payment is required.</p>
         </div>
         <div class="plan">
             <h3>Premium</h3>
@@ -167,7 +197,8 @@
                 <li>Responsive Layout</li>
             </ul>
             <div class="note">Delivery Time: 15 Days</div>
-            <a href="https://wa.me/916006587500?text=Hi Akram, I am interested in your Premium Web Design Package (₹4999, 6 Pages, Delivery: 15 Days)." class="whatsapp-btn">WhatsApp Order</a>
+            <a href="https://wa.me/916006587500?text=Hi Akram, I am interested in your Premium Web Design Package (₹4999, 6 Pages, Delivery: 15 Days)." class="payment-btn">Pay ₹49 First</a>
+            <p class="info">After payment, WhatsApp order will be enabled. Screenshot of payment is required.</p>
         </div>
         <div class="plan">
             <h3>Advance</h3>
@@ -178,7 +209,8 @@
                 <li>Responsive Layout</li>
             </ul>
             <div class="note">Delivery Time: 30 Days</div>
-            <a href="https://wa.me/916006587500?text=Hi Akram, I am interested in your Advance Web Design Package (₹7999, 10+2 Pages, Delivery: 30 Days)." class="whatsapp-btn">WhatsApp Order</a>
+            <a href="https://wa.me/916006587500?text=Hi Akram, I am interested in your Advance Web Design Package (₹7999, 10+2 Pages, Delivery: 30 Days)." class="payment-btn">Pay ₹49 First</a>
+            <p class="info">After payment, WhatsApp order will be enabled. Screenshot of payment is required.</p>
         </div>
     </div>
 </div>
@@ -190,14 +222,17 @@
     <p>Phone: <a href="tel:6006587500">6006587500</a></p>
     <p>Email: <a href="mailto:akram.webstudio@gmail.com">akram.webstudio@gmail.com</a></p>
     <p>Instagram: <a href="https://instagram.com/akram_web_designer" target="_blank">@akram_web_designer</a></p>
-    <a href="https://wa.me/916006587500?text=Hi Akram, I want to discuss my web design requirements." class="whatsapp-btn">WhatsApp Me</a>
+    <a href="https://wa.me/916006587500?text=Hi Akram, I want to discuss my web design requirements." class="payment-btn">Pay ₹49 First (Unlimited Talk)</a>
+    <p class="info">After payment, WhatsApp chat will be enabled. Screenshot of payment is required.</p>
+    <a href="https://wa.me/916006587500?text=Hi Akram, I want a 1-minute talk." class="payment-btn">Pay ₹9 First (1 Minute Talk)</a>
+    <p class="info">After payment, WhatsApp chat will be enabled. Screenshot of payment is required.</p>
 </div>
 
 </div>
 
-<footer>
+<div class="footer">
     <p id="copyright"></p>
-</footer>
+</div>
 
 <script>
     const year = new Date().getFullYear();
@@ -205,4 +240,4 @@
 </script>
 
 </body>
-            </html>
+    </html>
