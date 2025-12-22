@@ -12,18 +12,82 @@
         background: #f4f4f4;
         color: #333;
     }
+    /* Top Navbar with Hamburger */
+    .navbar {
+        background: #1a1a1a;
+        color: #fff;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    .navbar-title {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    .hamburger {
+        width: 24px;
+        cursor: pointer;
+    }
+    .hamburger span {
+        display: block;
+        height: 3px;
+        background: #fff;
+        margin: 4px 0;
+        border-radius: 2px;
+    }
+    /* Side Menu */
+    .side-menu {
+        position: fixed;
+        top: 0;
+        right: -260px;
+        width: 240px;
+        height: 100%;
+        background: #111;
+        color: #fff;
+        padding: 60px 20px;
+        box-shadow: -4px 0 12px rgba(0,0,0,0.3);
+        transition: right 0.3s ease;
+        z-index: 1100;
+    }
+    .side-menu.active { right: 0; }
+    .side-menu h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 1.3em;
+    }
+    .side-menu a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 0;
+        border-bottom: 1px solid #333;
+        font-size: 0.95em;
+    }
+    .side-menu a:hover { color: #25D366; }
+    .close-menu {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 1.4em;
+        cursor: pointer;
+    }
+
     header {
         background: #1a1a1a;
         color: #fff;
-        padding: 30px 0;
+        padding: 30px 0 20px;
         text-align: center;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     .container {
         width: 90%;
         max-width: 1200px;
         margin: auto;
-        padding: 20px;
+        padding: 20px 0 40px;
     }
     .section {
         margin-top: 50px;
@@ -60,7 +124,7 @@
         text-align: center;
         color: #1a1a1a;
         margin-bottom: 40px;
-        font-size: 2.4em;
+        font-size: 2.2em;
         font-weight: 600;
     }
     .pricing-table {
@@ -93,10 +157,7 @@
         margin: 15px 0;
         font-weight: bold;
     }
-    ul {
-        list-style: none;
-        padding: 0;
-    }
+    ul { list-style: none; padding: 0; }
     ul li {
         padding: 12px 0;
         border-bottom: 1px dashed #ccc;
@@ -108,61 +169,55 @@
         margin-top: 10px;
         text-align: center;
     }
-    .payment-btn {
-        display: block;
-        background: #25D366;
-        color: white;
-        text-align: center;
-        padding: 12px;
-        margin-top: 15px;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.1em;
-    }
-    .payment-btn:hover {
-        background: #128C7E;
-    }
-    .upload-btn {
-        display: block;
-        background: #3498db;
-        color: white;
-        text-align: center;
-        padding: 12px;
-        margin-top: 15px;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.1em;
-    }
-    .upload-btn:hover {
-        background: #2980b9;
-    }
+
+    /* small buttons (1/3 approx) */
+    .payment-btn,
     .confirm-btn {
-        display: block;
-        background: #e74c3c;
-        color: white;
-        text-align: center;
-        padding: 12px;
-        margin-top: 15px;
-        border-radius: 6px;
+        display: inline-block;
+        min-width: 90px;
+        padding: 6px 10px;
+        border-radius: 4px;
         text-decoration: none;
         font-weight: bold;
-        font-size: 1.1em;
+        font-size: 0.75em;
+        text-align: center;
+        margin: 6px 4px 0;
     }
-    .confirm-btn:hover {
-        background: #c0392b;
+    .payment-btn { background: #25D366; color: #fff; }
+    .payment-btn:hover { background: #128C7E; }
+    .confirm-btn { background: #e74c3c; color: #fff; }
+    .confirm-btn:hover { background: #c0392b; }
+
+    /* custom tiny upload buttons */
+    .file-wrapper {
+        margin-top: 6px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
     }
+    .file-input { display: none; }
+    .file-label {
+        padding: 4px 6px;
+        font-size: 0.7em;
+        background: #3498db;
+        color: #fff;
+        border-radius: 3px;
+        cursor: pointer;
+        margin: 2px;
+        white-space: nowrap;
+    }
+    .file-label:hover { background: #2980b9; }
+
     .info {
-        font-size: 0.9em;
+        font-size: 0.8em;
         color: #555;
-        margin-top: 10px;
+        margin-top: 6px;
     }
     .footer {
         background: #1a1a1a;
         color: #fff;
         text-align: center;
-        padding: 30px 0;
+        padding: 25px 0;
         margin-top: 50px;
         border-top: 1px solid #444;
     }
@@ -170,30 +225,51 @@
         color: #fff;
         text-decoration: none;
     }
-    .footer a:hover {
-        text-decoration: underline;
+    .footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px){
+        .plan{width:100%;}
     }
 </style>
 </head>
 <body>
 
+<div class="navbar">
+    <div class="navbar-title">Akram Web Designer</div>
+    <div class="hamburger" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<div class="side-menu" id="sideMenu">
+    <div class="close-menu" id="closeMenu">&times;</div>
+    <h3>Menu</h3>
+    <a href="#pricing-business">Dashboard – Business Packages</a>
+    <a href="#pricing-ecom">Dashboard – E‑commerce Packages</a>
+    <a href="#contact">Contact</a>
+    <a href="#terms">Terms & Conditions</a>
+</div>
+
 <header>
-    <h1>Akram Web Designer</h1>
-    <p>Professional & Premium Web Design Services</p>
+    <h1>Professional & Premium Web Design Services</h1>
 </header>
 
 <div class="container">
 
 <!-- Why Choose Me Section -->
-<div class="section">
+<div class="section" id="about">
     <h2>Why Choose Me?</h2>
     <p>With over 2 years of experience, I craft websites that are not just visually stunning but also optimized for performance. My goal is to make your online presence look professional and attract more buyers!</p>
 </div>
 
-<!-- Pricing Section -->
-<div class="pricing-section">
-    <h2>Our Packages & Pricing</h2>
+<!-- Business Pricing Section -->
+<div class="pricing-section" id="pricing-business">
+    <h2>Business Website Packages & Pricing</h2>
     <div class="pricing-table">
+
+        <!-- BASIC -->
         <div class="plan">
             <h3>Basic (1 Page)</h3>
             <div class="price">₹1499</div>
@@ -203,11 +279,26 @@
                 <li>Responsive Layout</li>
                 <li>Delivery: 2-5 Working Days</li>
             </ul>
-            <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">Pay ₹49 First</a>
-            <p class="info">After payment, upload screenshot and confirm. You will be redirected to WhatsApp.</p>
-            <input type="file" class="upload-btn" accept="image/*" />
-            <a href="https://wa.me/916006587500?text=49 payment is completed. Screenshot available." class="confirm-btn">Complete ₹49 Payment</a>
+            <div>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">Pay ₹49 First</a>
+            </div>
+            <p class="info">After payment, upload payment screenshot and tap complete.</p>
+            <div class="file-wrapper">
+                <input type="file" id="file-basic-1" class="file-input" accept="image/*">
+                <label for="file-basic-1" class="file-label">Img 1</label>
+                <input type="file" id="file-basic-2" class="file-input" accept="image/*">
+                <label for="file-basic-2" class="file-label">Img 2</label>
+                <input type="file" id="file-basic-3" class="file-input" accept="image/*">
+                <label for="file-basic-3" class="file-label">Img 3</label>
+                <input type="file" id="file-basic-4" class="file-input" accept="image/*">
+                <label for="file-basic-4" class="file-label">Img 4</label>
+            </div>
+            <div>
+                <a href="https://wa.me/916006587500?text=49 payment is completed. Screenshot available." class="confirm-btn">Complete ₹49</a>
+            </div>
         </div>
+
+        <!-- STANDARD -->
         <div class="plan">
             <h3>Standard (3 Pages)</h3>
             <div class="price">₹2999</div>
@@ -217,11 +308,26 @@
                 <li>Responsive Layout</li>
                 <li>Delivery: 6-10 Working Days</li>
             </ul>
-            <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">Pay ₹49 First</a>
-            <p class="info">After payment, upload screenshot and confirm. You will be redirected to WhatsApp.</p>
-            <input type="file" class="upload-btn" accept="image/*" />
-            <a href="https://wa.me/916006587500?text=49 payment is completed. Screenshot available." class="confirm-btn">Complete ₹49 Payment</a>
+            <div>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">Pay ₹49 First</a>
+            </div>
+            <p class="info">After payment, upload payment screenshot and tap complete.</p>
+            <div class="file-wrapper">
+                <input type="file" id="file-std-1" class="file-input" accept="image/*">
+                <label for="file-std-1" class="file-label">Img 1</label>
+                <input type="file" id="file-std-2" class="file-input" accept="image/*">
+                <label for="file-std-2" class="file-label">Img 2</label>
+                <input type="file" id="file-std-3" class="file-input" accept="image/*">
+                <label for="file-std-3" class="file-label">Img 3</label>
+                <input type="file" id="file-std-4" class="file-input" accept="image/*">
+                <label for="file-std-4" class="file-label">Img 4</label>
+            </div>
+            <div>
+                <a href="https://wa.me/916006587500?text=49 payment is completed. Screenshot available." class="confirm-btn">Complete ₹49</a>
+            </div>
         </div>
+
+        <!-- PREMIUM -->
         <div class="plan">
             <h3>Premium</h3>
             <div class="price">₹4999</div>
@@ -231,11 +337,26 @@
                 <li>Responsive Layout</li>
             </ul>
             <div class="note">Delivery Time: 15 Days</div>
-            <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">Pay ₹49 First</a>
-            <p class="info">After payment, upload screenshot and confirm. You will be redirected to WhatsApp.</p>
-            <input type="file" class="upload-btn" accept="image/*" />
-            <a href="https://wa.me/916006587500?text=49 payment is completed. Screenshot available." class="confirm-btn">Complete ₹49 Payment</a>
+            <div>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">Pay ₹49 First</a>
+            </div>
+            <p class="info">After payment, upload payment screenshot and tap complete.</p>
+            <div class="file-wrapper">
+                <input type="file" id="file-prem-1" class="file-input" accept="image/*">
+                <label for="file-prem-1" class="file-label">Img 1</label>
+                <input type="file" id="file-prem-2" class="file-input" accept="image/*">
+                <label for="file-prem-2" class="file-label">Img 2</label>
+                <input type="file" id="file-prem-3" class="file-input" accept="image/*">
+                <label for="file-prem-3" class="file-label">Img 3</label>
+                <input type="file" id="file-prem-4" class="file-input" accept="image/*">
+                <label for="file-prem-4" class="file-label">Img 4</label>
+            </div>
+            <div>
+                <a href="https://wa.me/916006587500?text=49 payment is completed. Screenshot available." class="confirm-btn">Complete ₹49</a>
+            </div>
         </div>
+
+        <!-- ADVANCE -->
         <div class="plan">
             <h3>Advance</h3>
             <div class="price">₹7999</div>
@@ -245,29 +366,101 @@
                 <li>Responsive Layout</li>
             </ul>
             <div class="note">Delivery Time: 30 Days</div>
-            <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">Pay ₹49 First</a>
-            <p class="info">After payment, upload screenshot and confirm. You will be redirected to WhatsApp.</p>
-            <input type="file" class="upload-btn" accept="image/*" />
-            <a href="https://wa.me/916006587500?text=49 payment is completed. Screenshot available." class="confirm-btn">Complete ₹49 Payment</a>
+            <div>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">Pay ₹49 First</a>
+            </div>
+            <p class="info">After payment, upload payment screenshot and tap complete.</p>
+            <div class="file-wrapper">
+                <input type="file" id="file-adv-1" class="file-input" accept="image/*">
+                <label for="file-adv-1" class="file-label">Img 1</label>
+                <input type="file" id="file-adv-2" class="file-input" accept="image/*">
+                <label for="file-adv-2" class="file-label">Img 2</label>
+                <input type="file" id="file-adv-3" class="file-input" accept="image/*">
+                <label for="file-adv-3" class="file-label">Img 3</label>
+                <input type="file" id="file-adv-4" class="file-input" accept="image/*">
+                <label for="file-adv-4" class="file-label">Img 4</label>
+            </div>
+            <div>
+                <a href="https://wa.me/916006587500?text=49 payment is completed. Screenshot available." class="confirm-btn">Complete ₹49</a>
+            </div>
         </div>
+
+    </div>
+</div>
+
+<!-- E‑commerce Pricing Section -->
+<div class="pricing-section" id="pricing-ecom">
+    <h2>E‑commerce Website Packages & Pricing</h2>
+    <div class="pricing-table">
+
+        <div class="plan">
+            <h3>E‑commerce Basic</h3>
+            <div class="price">₹3999</div>
+            <ul>
+                <li>Starter Online Store</li>
+                <li>Product Catalog Setup</li>
+                <li>Responsive Layout</li>
+            </ul>
+            <div>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=3999&cu=INR" class="payment-btn">Pay ₹3999</a>
+            </div>
+        </div>
+
+        <div class="plan">
+            <h3>E‑commerce Standard</h3>
+            <div class="price">₹6999</div>
+            <ul>
+                <li>Advanced Store Features</li>
+                <li>Payment Gateway Integration</li>
+                <li>Responsive Layout</li>
+            </ul>
+            <div>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=6999&cu=INR" class="payment-btn">Pay ₹6999</a>
+            </div>
+        </div>
+
+        <div class="plan">
+            <h3>E‑commerce Premium</h3>
+            <div class="price">₹9999</div>
+            <ul>
+                <li>High Performance Store</li>
+                <li>Advanced Analytics</li>
+                <li>Responsive Layout</li>
+            </ul>
+            <div>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=9999&cu=INR" class="payment-btn">Pay ₹9999</a>
+            </div>
+        </div>
+
+        <div class="plan">
+            <h3>E‑commerce Advance</h3>
+            <div class="price">₹14999</div>
+            <ul>
+                <li>Custom E‑commerce Solution</li>
+                <li>Scalable & Optimized</li>
+                <li>Responsive Layout</li>
+            </ul>
+            <div>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=14999&cu=INR" class="payment-btn">Pay ₹14999</a>
+            </div>
+        </div>
+
     </div>
 </div>
 
 <!-- Contact Me Section -->
-<div class="section">
+<div class="section" id="contact">
     <h2>Contact Me</h2>
     <p>If you are interested or have any questions, feel free to contact me. I'm here to help you create a stunning web presence!</p>
     <p>Phone: <a href="tel:6006587500">6006587500</a></p>
     <p>Email: <a href="mailto:akram.webstudio@gmail.com">akram.webstudio@gmail.com</a></p>
     <p>Instagram: <a href="https://instagram.com/akram_web_designer" target="_blank">@akram_web_designer</a></p>
-    <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">Pay ₹49 First (Unlimited Talk)</a>
-    <p class="info">After payment, upload screenshot and confirm. You will be redirected to WhatsApp.</p>
-    <input type="file" class="upload-btn" accept="image/*" />
-    <a href="https://wa.me/916006587500?text=49 payment is completed. Screenshot available." class="confirm-btn">Complete ₹49 Payment</a>
-    <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=9&cu=INR" class="payment-btn">Pay ₹9 First (1 Minute Talk)</a>
-    <p class="info">After payment, upload screenshot and confirm. You will be redirected to WhatsApp.</p>
-    <input type="file" class="upload-btn" accept="image/*" />
-    <a href="https://wa.me/916006587500?text=9 payment is completed. Screenshot available." class="confirm-btn">Complete ₹9 Payment</a>
+</div>
+
+<!-- Terms & Conditions -->
+<div class="section" id="terms">
+    <h2>Terms & Conditions</h2>
+    <p>Once any package is purchased and payment is completed, the amount is non‑refundable. Please confirm your package carefully before making the payment.</p>
 </div>
 
 </div>
@@ -277,8 +470,30 @@
 </div>
 
 <script>
+    // Dynamic copyright year
     const year = new Date().getFullYear();
-    document.getElementById("copyright").innerHTML = `&copy; ${year} Akram Web Designer. All rights reserved.`;
+    document.getElementById("copyright").innerHTML =
+        `&copy; ${year} Akram Web Designer. All rights reserved.`;
+
+    // Hamburger menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const sideMenu   = document.getElementById('sideMenu');
+    const closeMenu  = document.getElementById('closeMenu');
+
+    menuToggle.addEventListener('click', () => {
+        sideMenu.classList.add('active');
+    });
+
+    closeMenu.addEventListener('click', () => {
+        sideMenu.classList.remove('active');
+    });
+
+    // Close menu on link click
+    sideMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            sideMenu.classList.remove('active');
+        });
+    });
 </script>
 
 </body>
