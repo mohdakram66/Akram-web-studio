@@ -5,36 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Akram Web Designer Portfolio</title>
 
-        <!-- Google AdSense Auto Ads -->
+<!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6440787257494369"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
+
 <style>
+    :root{
+        --bg:#f4f4f4;
+        --dark:#111827;
+        --primary:#2563eb;
+        --accent:#10b981;
+        --text:#111827;
+        --muted:#6b7280;
+        --card:#ffffff;
+        --border:#e5e7eb;
+    }
+    *{box-sizing:border-box;}
     body {
-        font-family: 'Arial', sans-serif;
+        font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
         margin: 0;
         padding: 0;
-        background: #f4f4f4;
-        color: #333;
+        background: var(--bg);
+        color: var(--text);
     }
+
     /* Top Navbar with Hamburger */
     .navbar {
-        background: #1a1a1a;
+        background: var(--dark);
         color: #fff;
-        padding: 15px 20px;
+        padding: 12px 18px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 6px 18px rgba(15,23,42,0.45);
         position: sticky;
         top: 0;
         z-index: 1000;
     }
     .navbar-title {
-        font-size: 1.2em;
-        font-weight: bold;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: .04em;
+        display:flex;
+        align-items:center;
+    }
+    .navbar-title img{
+        height:30px;
+        width:auto;
+        margin-right:8px;
+        border-radius:6px;
+    }
+    .navbar-sub{
+        font-size:.7rem;
+        color:#9ca3af;
+    }
+    .brand-text{
+        display:flex;
+        flex-direction:column;
     }
     .hamburger {
-        width: 24px;
+        width: 26px;
         cursor: pointer;
     }
     .hamburger span {
@@ -42,8 +72,10 @@
         height: 3px;
         background: #fff;
         margin: 4px 0;
-        border-radius: 2px;
+        border-radius: 999px;
+        transition:.2s;
     }
+
     /* Side Menu */
     .side-menu {
         position: fixed;
@@ -51,145 +83,229 @@
         right: -260px;
         width: 240px;
         height: 100%;
-        background: #111;
+        background: #020617;
         color: #fff;
         padding: 60px 20px;
-        box-shadow: -4px 0 12px rgba(0,0,0,0.3);
+        box-shadow: -4px 0 18px rgba(15,23,42,0.8);
         transition: right 0.3s ease;
         z-index: 1100;
     }
     .side-menu.active { right: 0; }
     .side-menu h3 {
         margin-top: 0;
-        margin-bottom: 20px;
-        font-size: 1.3em;
+        margin-bottom: 16px;
+        font-size: 1.2rem;
+        letter-spacing:.06em;
+        text-transform:uppercase;
     }
     .side-menu a {
         display: block;
-        color: #fff;
+        color: #e5e7eb;
         text-decoration: none;
-        padding: 10px 0;
-        border-bottom: 1px solid #333;
-        font-size: 0.95em;
+        padding: 9px 0;
+        border-bottom: 1px solid rgba(55,65,81,.7);
+        font-size: 0.92rem;
     }
-    .side-menu a:hover { color: #25D366; }
+    .side-menu a:hover { color: #22c55e; }
     .close-menu {
         position: absolute;
-        top: 15px;
-        right: 20px;
-        font-size: 1.4em;
+        top: 14px;
+        right: 18px;
+        font-size: 1.5rem;
         cursor: pointer;
     }
 
     header {
-        background: #1a1a1a;
+        background: linear-gradient(135deg,#111827,#1f2937);
         color: #fff;
-        padding: 30px 0 20px;
+        padding: 40px 14px 32px;
         text-align: center;
+        box-shadow: 0 12px 28px rgba(15,23,42,0.6);
     }
+    header h1{
+        margin:0 0 8px;
+        font-size:2rem;
+    }
+    header p{
+        margin:0;
+        font-size:.95rem;
+        color:#d1d5db;
+    }
+
     .container {
-        width: 90%;
+        width: 92%;
         max-width: 1200px;
         margin: auto;
-        padding: 20px 0 40px;
+        padding: 26px 0 40px;
     }
+
     .section {
-        margin-top: 50px;
+        margin-top: 32px;
         text-align: center;
-        padding: 30px;
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
+        padding: 26px 22px 28px;
+        background: var(--card);
+        border-radius: 16px;
+        border:1px solid var(--border);
+        box-shadow: 0 10px 26px rgba(15,23,42,0.08);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
     .section:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        transform: translateY(-4px);
+        box-shadow: 0 18px 32px rgba(15,23,42,0.15);
     }
     .section h2 {
-        color: #1a1a1a;
-        margin-bottom: 20px;
-        font-size: 2.2em;
-        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 12px;
+        font-size: 1.8rem;
+        font-weight: 700;
     }
     .section p {
-        font-size: 1.1em;
+        font-size: 1rem;
         line-height: 1.6;
-        color: #555;
+        color: var(--muted);
+        max-width:720px;
+        margin:0 auto;
     }
+
+    .badge-row{
+        margin-top:14px;
+        display:flex;
+        gap:8px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+    .badge{
+        font-size:.75rem;
+        padding:4px 9px;
+        border-radius:999px;
+        background:#eff6ff;
+        color:#1d4ed8;
+        border:1px solid #bfdbfe;
+    }
+
     .pricing-section {
-        background: #fff;
-        padding: 60px 20px;
-        margin-top: 50px;
-        border-radius: 12px;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        background: transparent;
+        margin-top: 40px;
     }
     .pricing-section h2 {
         text-align: center;
-        color: #1a1a1a;
-        margin-bottom: 40px;
-        font-size: 2.2em;
-        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 10px;
+        font-size: 1.9rem;
+        font-weight: 700;
+    }
+    .pricing-sub{
+        text-align:center;
+        font-size:.9rem;
+        color:var(--muted);
+        margin-bottom:26px;
     }
     .pricing-table {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 25px;
+        gap: 24px;
     }
     .plan {
-        background: #f9f9f9;
-        border: 1px solid #ddd;
-        border-radius: 10px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
         width: 270px;
-        padding: 25px;
+        padding: 22px 20px 24px;
         transition: all 0.3s ease;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 24px rgba(15,23,42,0.08);
+        position:relative;
+        overflow:hidden;
     }
+    .plan::before{
+        content:"";
+        position:absolute;
+        inset:0;
+        background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(16,185,129,0.0));
+        opacity:0;
+        transition:.3s;
+        pointer-events:none;
+    }
+    .plan:hover::before{opacity:1;}
     .plan:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        transform: translateY(-6px);
+        box-shadow: 0 18px 36px rgba(15,23,42,0.16);
     }
     .plan h3 {
         margin-top: 0;
-        color: #1a1a1a;
-        font-size: 1.4em;
+        color: var(--dark);
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+    }
+    .plan-tag{
+        font-size:.75rem;
+        color:var(--muted);
+        margin-bottom: 10px;
     }
     .price {
-        font-size: 2.2em;
-        color: #e74c3c;
-        margin: 15px 0;
-        font-weight: bold;
+        font-size: 2rem;
+        color: #ef4444;
+        margin: 6px 0 14px;
+        font-weight: 700;
     }
-    ul { list-style: none; padding: 0; }
+    .price span{
+        font-size:.8rem;
+        color:var(--muted);
+        font-weight:400;
+    }
+    ul { list-style: none; padding: 0; margin:0 0 10px; }
     ul li {
-        padding: 12px 0;
-        border-bottom: 1px dashed #ccc;
-        font-size: 1em;
+        padding: 8px 0;
+        border-bottom: 1px dashed #e5e7eb;
+        font-size: .9rem;
+        color:var(--muted);
+        text-align:left;
     }
+    ul li:last-child{border-bottom:none;}
+
     .note {
-        font-size: 0.9em;
-        color: #555;
-        margin-top: 10px;
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-top: 6px;
         text-align: center;
     }
 
     .payment-btn,
     .confirm-btn {
-        display: inline-block;
-        min-width: 90px;
-        padding: 6px 10px;
-        border-radius: 4px;
+        display: inline-flex;
+        align-items:center;
+        justify-content:center;
+        gap:6px;
+        min-width: 110px;
+        padding: 7px 12px;
+        border-radius: 999px;
         text-decoration: none;
-        font-weight: bold;
-        font-size: 0.75em;
+        font-weight: 600;
+        font-size: 0.78rem;
         text-align: center;
-        margin: 6px 4px 0;
+        margin: 8px 4px 0;
+        border:none;
     }
-    .payment-btn { background: #25D366; color: #fff; }
-    .payment-btn:hover { background: #128C7E; }
-    .confirm-btn { background: #e74c3c; color: #fff; }
-    .confirm-btn:hover { background: #c0392b; }
+    .payment-btn {
+        background: linear-gradient(135deg,#22c55e,#16a34a);
+        color: #fff;
+    }
+    .payment-btn:hover { background: linear-gradient(135deg,#16a34a,#15803d); }
+    .confirm-btn {
+        background: #111827;
+        color: #fff;
+    }
+    .confirm-btn:hover { background: #030712; }
+
+    .payment-btn span.icon{
+        display:inline-flex;
+        width:16px;height:16px;
+        border-radius:999px;
+        background:rgba(15,23,42,.9);
+        align-items:center;
+        justify-content:center;
+        font-size:.7rem;
+    }
 
     .file-wrapper {
         margin-top: 6px;
@@ -200,32 +316,33 @@
     .file-input { display: none; }
     .file-label {
         padding: 4px 6px;
-        font-size: 0.7em;
-        background: #3498db;
+        font-size: 0.7rem;
+        background: #2563eb;
         color: #fff;
-        border-radius: 3px;
+        border-radius: 999px;
         cursor: pointer;
         margin: 2px;
         white-space: nowrap;
     }
-    .file-label:hover { background: #2980b9; }
+    .file-label:hover { background: #1d4ed8; }
 
     .info {
-        font-size: 0.8em;
-        color: #555;
+        font-size: 0.78rem;
+        color: var(--muted);
         margin-top: 6px;
     }
+
     .footer {
-        background: #1a1a1a;
-        color: #fff;
+        background: #020617;
+        color: #9ca3af;
         text-align: center;
-        padding: 20px 10px;
-        margin-top: 50px;
-        border-top: 1px solid #444;
-        font-size: 0.85em;
+        padding: 18px 10px 22px;
+        margin-top: 44px;
+        border-top: 1px solid #111827;
+        font-size: 0.8rem;
     }
     .footer a {
-        color: #fff;
+        color: #e5e7eb;
         text-decoration: none;
         margin: 0 6px;
     }
@@ -233,6 +350,7 @@
 
     @media (max-width: 600px){
         .plan{width:100%;}
+        header h1{font-size:1.6rem;}
     }
 </style>
 </head>
@@ -240,9 +358,11 @@
 
 <div class="navbar">
     <div class="navbar-title">
-        <img src="logo.png" alt="Akram Web Designer Logo"
-             style="height:28px;vertical-align:middle;margin-right:6px;">
-        Akram Web Designer
+        <img src="logo.png" alt="Akram Web Designer Logo">
+        <div class="brand-text">
+            <span>Akram Web Designer</span>
+            <span class="navbar-sub">Modern websites • Branding • E‑commerce</span>
+        </div>
     </div>
     <div class="hamburger" id="menuToggle">
         <span></span>
@@ -254,12 +374,12 @@
 <div class="side-menu" id="sideMenu">
     <div class="close-menu" id="closeMenu">&times;</div>
     <h3>Menu</h3>
-    <a href="#pricing-business">Dashboard – Business Packages</a>
-    <a href="#pricing-ecom">Dashboard – E‑commerce Packages</a>
-    <a href="#contact">Contact on Home page</a>
+    <a href="#pricing-business">Business Packages</a>
+    <a href="#pricing-ecom">E‑commerce Packages</a>
+    <a href="#contact">Contact</a>
     <a href="terms.html">Terms & Conditions</a>
     <a href="about.html">About Us</a>
-    <a href="contact.html">Contact Us</a>
+    <a href="contact.html">Contact Page</a>
     <a href="privacy-policy.html">Privacy Policy</a>
     <a href="blog1.html">Blog 1</a>
     <a href="blog2.html">Blog 2</a>
@@ -268,6 +388,7 @@
 
 <header>
     <h1>Professional & Premium Web Design Services</h1>
+    <p>High‑converting business and e‑commerce websites with a clean, modern UI.</p>
 </header>
 
 <div class="container">
@@ -275,28 +396,37 @@
 <!-- Why Choose Me Section -->
 <div class="section" id="about">
     <h2>Why Choose Me?</h2>
-    <p>With over 2 years of experience, I craft websites that are not just visually stunning but also optimized for performance. My goal is to make your online presence look professional and attract more buyers!</p>
+    <p>More than 2 years of experience designing fast, mobile‑friendly websites that look premium and help you convert more customers online.</p>
+    <div class="badge-row">
+        <span class="badge">Custom Design</span>
+        <span class="badge">Responsive Layout</span>
+        <span class="badge">Payment Integration</span>
+    </div>
 </div>
 
 <!-- Business Pricing Section -->
 <div class="pricing-section" id="pricing-business">
-    <h2>Business Website Packages & Pricing</h2>
+    <h2>Business Website Packages</h2>
+    <p class="pricing-sub">Perfect for service‑based businesses, portfolios and local brands.</p>
     <div class="pricing-table">
 
         <!-- BASIC -->
         <div class="plan">
-            <h3>Basic (1 Page)</h3>
-            <div class="price">₹1499</div>
+            <h3>Basic</h3>
+            <div class="plan-tag">Single‑page starter website</div>
+            <div class="price">₹1499 <span>/ one time</span></div>
             <ul>
-                <li>1 Page</li>
-                <li>Standard Design</li>
-                <li>Responsive Layout</li>
-                <li>Delivery: 2-5 Working Days</li>
+                <li>1 page modern layout</li>
+                <li>Standard clean design</li>
+                <li>Responsive for mobile &amp; desktop</li>
+                <li>Delivery: 2–5 working days</li>
             </ul>
             <div>
-                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">Pay ₹49 First</a>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">
+                    <span class="icon">₹</span>Pay ₹49 First
+                </a>
             </div>
-            <p class="info">After payment, upload payment screenshot and tap complete.</p>
+            <p class="info">Pay booking amount, then upload screenshot and tap complete.</p>
             <div class="file-wrapper">
                 <input type="file" id="file-basic-1" class="file-input" accept="image/*">
                 <label for="file-basic-1" class="file-label">Img 1</label>
@@ -314,18 +444,21 @@
 
         <!-- STANDARD -->
         <div class="plan">
-            <h3>Standard (3 Pages)</h3>
-            <div class="price">₹2999</div>
+            <h3>Standard</h3>
+            <div class="plan-tag">3‑page professional website</div>
+            <div class="price">₹2999 <span>/ one time</span></div>
             <ul>
-                <li>3 Pages</li>
-                <li>Professional Design</li>
-                <li>Responsive Layout</li>
-                <li>Delivery: 6-10 Working Days</li>
+                <li>3 pages (Home, About, Services)</li>
+                <li>Professional custom design</li>
+                <li>Responsive for all devices</li>
+                <li>Delivery: 6–10 working days</li>
             </ul>
             <div>
-                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">Pay ₹49 First</a>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">
+                    <span class="icon">₹</span>Pay ₹49 First
+                </a>
             </div>
-            <p class="info">After payment, upload payment screenshot and tap complete.</p>
+            <p class="info">Pay booking amount, then upload screenshot and tap complete.</p>
             <div class="file-wrapper">
                 <input type="file" id="file-std-1" class="file-input" accept="image/*">
                 <label for="file-std-1" class="file-label">Img 1</label>
@@ -344,17 +477,20 @@
         <!-- PREMIUM -->
         <div class="plan">
             <h3>Premium</h3>
-            <div class="price">₹4999</div>
+            <div class="plan-tag">6‑page high quality website</div>
+            <div class="price">₹4999 <span>/ one time</span></div>
             <ul>
-                <li>6 Pages</li>
-                <li>High Quality Design</li>
-                <li>Responsive Layout</li>
+                <li>Up to 6 pages</li>
+                <li>High quality custom UI</li>
+                <li>Responsive + basic SEO setup</li>
             </ul>
-            <div class="note">Delivery Time: 15 Days</div>
+            <div class="note">Estimated delivery: 15 days</div>
             <div>
-                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">Pay ₹49 First</a>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">
+                    <span class="icon">₹</span>Pay ₹49 First
+                </a>
             </div>
-            <p class="info">After payment, upload payment screenshot and tap complete.</p>
+            <p class="info">Pay booking amount, then upload screenshot and tap complete.</p>
             <div class="file-wrapper">
                 <input type="file" id="file-prem-1" class="file-input" accept="image/*">
                 <label for="file-prem-1" class="file-label">Img 1</label>
@@ -373,17 +509,20 @@
         <!-- ADVANCE -->
         <div class="plan">
             <h3>Advance</h3>
-            <div class="price">₹7999</div>
+            <div class="plan-tag">10+2 page custom website</div>
+            <div class="price">₹7999 <span>/ one time</span></div>
             <ul>
-                <li>10 + 2 Pages</li>
-                <li>Fully Custom & Professional</li>
-                <li>Responsive Layout</li>
+                <li>10 + 2 custom pages</li>
+                <li>Fully tailored professional design</li>
+                <li>Responsive + basic on‑page SEO</li>
             </ul>
-            <div class="note">Delivery Time: 30 Days</div>
+            <div class="note">Estimated delivery: 30 days</div>
             <div>
-                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">Pay ₹49 First</a>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=49&cu=INR" class="payment-btn">
+                    <span class="icon">₹</span>Pay ₹49 First
+                </a>
             </div>
-            <p class="info">After payment, upload payment screenshot and tap complete.</p>
+            <p class="info">Pay booking amount, then upload screenshot and tap complete.</p>
             <div class="file-wrapper">
                 <input type="file" id="file-adv-1" class="file-input" accept="image/*">
                 <label for="file-adv-1" class="file-label">Img 1</label>
@@ -404,58 +543,71 @@
 
 <!-- E‑commerce Pricing Section -->
 <div class="pricing-section" id="pricing-ecom">
-    <h2>E‑commerce Website Packages & Pricing</h2>
+    <h2>E‑commerce Website Packages</h2>
+    <p class="pricing-sub">For product‑based businesses that need online store + payment setup.</p>
     <div class="pricing-table">
 
         <div class="plan">
             <h3>E‑commerce Basic</h3>
+            <div class="plan-tag">Starter online store</div>
             <div class="price">₹3999</div>
             <ul>
-                <li>Starter Online Store</li>
-                <li>Product Catalog Setup</li>
-                <li>Responsive Layout</li>
+                <li>Product catalogue setup</li>
+                <li>Basic checkout flow</li>
+                <li>Responsive layout</li>
             </ul>
             <div>
-                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=3999&cu=INR" class="payment-btn">Pay ₹3999</a>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=3999&cu=INR" class="payment-btn">
+                    <span class="icon">₹</span>Pay ₹3999
+                </a>
             </div>
         </div>
 
         <div class="plan">
             <h3>E‑commerce Standard</h3>
+            <div class="plan-tag">Advanced store features</div>
             <div class="price">₹6999</div>
             <ul>
-                <li>Advanced Store Features</li>
-                <li>Payment Gateway Integration</li>
-                <li>Responsive Layout</li>
+                <li>Advanced product filters</li>
+                <li>Payment gateway integration</li>
+                <li>Responsive layout</li>
             </ul>
             <div>
-                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=6999&cu=INR" class="payment-btn">Pay ₹6999</a>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=6999&cu=INR" class="payment-btn">
+                    <span class="icon">₹</span>Pay ₹6999
+                </a>
             </div>
         </div>
 
         <div class="plan">
             <h3>E‑commerce Premium</h3>
+            <div class="plan-tag">High performance store</div>
             <div class="price">₹9999</div>
             <ul>
-                <li>High Performance Store</li>
-                <li>Advanced Analytics</li>
-                <li>Responsive Layout</li>
+                <li>Optimised for high traffic</li>
+                <li>Analytics & tracking setup</li>
+                <li>Responsive layout</li>
             </ul>
             <div>
-                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=9999&cu=INR" class="payment-btn">Pay ₹9999</a>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=9999&cu=INR" class="payment-btn">
+                    <span class="icon">₹</span>Pay ₹9999
+                </a>
             </div>
         </div>
 
         <div class="plan">
             <h3>E‑commerce Advance</h3>
+            <div class="plan-tag">Custom e‑commerce solution</div>
             <div class="price">₹14999</div>
             <ul>
-                <li>Custom E‑commerce Solution</li>
-                <li>Scalable & Optimized</li>
-                <li>Responsive Layout</li>
+                <li>Fully custom features</li>
+                <li>Scalable & optimised</li>
+                <li>Responsive layout</li>
             </ul>
             <div>
-                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=14999&cu=INR" class="payment-btn">Pay ₹14999</a>
+                <a href="upi://pay?pa=6006587500@ybl&pn=Akram Web Designer&am=14999&cu=INR" class="payment-btn">
+                    <span class="icon">₹</span>Pay ₹14999
+                </a>
             </div>
         </div>
 
@@ -465,45 +617,6 @@
 <!-- Contact Me Section -->
 <div class="section" id="contact">
     <h2>Contact Me</h2>
-    <p>If you are interested or have any questions, feel free to contact me. I'm here to help you create a stunning web presence!</p>
-    <p>Email: <a href="mailto:akram.webstudio@gmail.com">akram.webstudio@gmail.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/akram_web_designer" target="_blank">@akram_web_designer</a></p>
-</div>
-
-</div>
-
-<div class="footer">
-    <p>
-        &copy; <span id="yearSpan"></span> Akram Web Designer. All rights reserved.<br/>
-        <a href="about.html">About Us</a> |
-        <a href="contact.html">Contact Us</a> |
-        <a href="privacy-policy.html">Privacy Policy</a> |
-        <a href="terms.html">Terms & Conditions</a> |
-        <a href="blog1.html">Blog 1</a> |
-        <a href="blog2.html">Blog 2</a> |
-        <a href="blog3.html">Blog 3</a>
-    </p>
-</div>
-
-<script>
-    // year
-    document.getElementById("yearSpan").textContent = new Date().getFullYear();
-
-    // hamburger
-    const menuToggle = document.getElementById('menuToggle');
-    const sideMenu   = document.getElementById('sideMenu');
-    const closeMenu  = document.getElementById('closeMenu');
-
-    menuToggle.addEventListener('click', () => {
-        sideMenu.classList.add('active');
-    });
-    closeMenu.addEventListener('click', () => {
-        sideMenu.classList.remove('active');
-    });
-    sideMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => sideMenu.classList.remove('active'));
-    });
-</script>
-
-</body>
-        </html>
+    <p>Share your idea on WhatsApp or email and get a custom website quote within 24 hours.</p>
+    <p>Phone: <a href="tel:6006587500">6006587500</a></p>
+    <p>Email: <a href="mailto:akram.webstudio@gmail.com">
