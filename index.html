@@ -619,4 +619,44 @@
     <h2>Contact Me</h2>
     <p>Share your idea on WhatsApp or email and get a custom website quote within 24 hours.</p>
     <p>Phone: <a href="tel:6006587500">6006587500</a></p>
-    <p>Email: <a href="mailto:akram.webstudio@gmail.com">
+    <p>Email: <a href="mailto:akram.webstudio@gmail.com">akram.webstudio@gmail.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/akram_web_designer" target="_blank">@akram_web_designer</a></p>
+</div>
+
+</div>
+
+<div class="footer">
+    <p>
+        &copy; <span id="yearSpan"></span> Akram Web Designer. All rights reserved.<br/>
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="privacy-policy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms & Conditions</a> |
+        <a href="blog1.html">Blog 1</a> |
+        <a href="blog2.html">Blog 2</a> |
+        <a href="blog3.html">Blog 3</a>
+    </p>
+</div>
+
+<script>
+    // year
+    document.getElementById("yearSpan").textContent = new Date().getFullYear();
+
+    // hamburger
+    const menuToggle = document.getElementById('menuToggle');
+    const sideMenu   = document.getElementById('sideMenu');
+    const closeMenu  = document.getElementById('closeMenu');
+
+    menuToggle.addEventListener('click', () => {
+        sideMenu.classList.add('active');
+    });
+    closeMenu.addEventListener('click', () => {
+        sideMenu.classList.remove('active');
+    });
+    sideMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => sideMenu.classList.remove('active'));
+    });
+</script>
+
+</body>
+        </html>
